@@ -17,8 +17,9 @@ public class Ej5 {
 		try {
 
 			bw = new BufferedWriter(new FileWriter(ruta, true));
-			
-			if(!ruta.exists()) {
+
+			if (!ruta.exists()) {
+				
 				ruta.createNewFile();
 			}
 			System.out.println("Escriba su nombre y edad");
