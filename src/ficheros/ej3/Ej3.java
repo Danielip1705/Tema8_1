@@ -8,49 +8,70 @@ import java.util.Scanner;
 public class Ej3 {
 
 	public static void main(String[] args) {
+
+		// Creamos el objeto scanner
 		Scanner sc = new Scanner(System.in);
+		// Creamos un buffered writer e inicializamos a null
 		BufferedWriter bw = null;
+		// Creamos una varible string
 		String datos = "";
-		
-			try {
-				
-				bw = new BufferedWriter(new FileWriter("src\\ficheros\\ej3\\Alumnos.txt", true));
 
-				System.out.println("Escriba el nombre del alumno");
+		// Creamos try para capturar el error del fichero
+		try {
 
-				datos = sc.nextLine();
+			// Iniciamos el bufferedWriter con el documento
+			bw = new BufferedWriter(new FileWriter("src\\ficheros\\ej3\\Alumnos.txt", true));
 
-				bw.write(datos);
-				bw.write(" ");
+			// Imprimimos en consola que nos indique el alumno
+			System.out.println("Escriba el nombre del alumno");
 
-				System.out.println("Escriba la edad");
+			// Escribimos los datos
+			datos = sc.nextLine();
 
-				datos = sc.nextLine();
+			// Escribimos en el documento los datos escritos anteriormente
+			bw.write(datos);
 
-				bw.write(datos);
-				bw.write(" ");
+			// Escribimos un espacio
+			bw.write(" ");
 
-				System.out.println("Escriba la altura");
+			// Imprimimos en consola que nos indique la edad
+			System.out.println("Escriba la edad");
 
-				datos = sc.nextLine();
+			// Lo escribimos en datos
+			datos = sc.nextLine();
 
-				bw.write(datos);
+			// Escribimos en el documento los datos escritos anteriormente
+			bw.write(datos);
 
-				bw.newLine();
+			// Escribimos un espacio
+			bw.write(" ");
 
-				bw.flush();
+			// Imprimimos en consola que nos indique la altura
+			System.out.println("Escriba la altura");
 
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			try {
-				bw.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			// Lo escribimos en datos
+			datos = sc.nextLine();
+
+			// Escribimos en el documento los datos escritos anteriormente
+			bw.write(datos);
+
+			// Indicamos un salto de linea
+			bw.newLine();
+
+			// Vaciamos buffer
+			bw.flush();
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+
+		try {
+			bw.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 }
